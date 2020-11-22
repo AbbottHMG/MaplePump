@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <ItemsProjectGuid>{3b53cdcb-89a1-4448-9c11-ea026d721ea3}</ItemsProjectGuid>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectCapability Include="SourceItemsFromImports" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\Dhcp.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\Dns.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\Ethernet.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\EthernetClient.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\EthernetServer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\EthernetUdp.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\socket.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\utility\w5100.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\Dhcp.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\Dns.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\Ethernet.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\EthernetClient.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\EthernetServer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\EthernetUdp.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\utility\w5100.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="$(MSBuildThisFileDirectory)keywords.txt" />
+    <Text Include="$(MSBuildThisFileDirectory)library.properties" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)AUTHORS" />
+    <None Include="$(MSBuildThisFileDirectory)README.adoc" />
+  </ItemGroup>
+</Project>

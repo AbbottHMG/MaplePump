@@ -1,0 +1,72 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MaplePump", "MaplePump.vcxproj", "{C5F80730-F44F-4478-BDAE-6634EFC2CA88}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LiquidCrystal_I2C-1.1.2", "Libraries\LiquidCrystal_I2C\1.1.2\LiquidCrystal_I2C\LiquidCrystal_I2C-1.1.2.vcxitems", "{3D786D50-E220-4EFA-9EAE-5EB599F2A914}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OneWire-2.3.5", "Libraries\OneWire\2.3.5\OneWire\OneWire-2.3.5.vcxitems", "{0ABBD25D-2268-481C-A541-8775957262CD}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SD-1.2.4", "Libraries\SD\1.2.4\SD\SD-1.2.4.vcxitems", "{D9184526-A426-40CC-8F84-8A77E484420D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RTClib-master-1.3.2", "Libraries\RTClib-master\1.3.2\RTClib-master\RTClib-master-1.3.2.vcxitems", "{F039C173-BC09-4688-A00F-678ACB3C48D7}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Wire-1.0", "Libraries\Wire\1.0\Wire\Wire-1.0.vcxitems", "{0F45C88C-229F-4DAB-B7E0-4C0CB8289737}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WiFi-1.2.7", "Libraries\WiFi\1.2.7\WiFi\WiFi-1.2.7.vcxitems", "{0E49DDBE-DE44-4AA6-B12D-AAF828F436AC}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ethernet-2.0.0", "Libraries\Ethernet\2.0.0\Ethernet\Ethernet-2.0.0.vcxitems", "{3B53CDCB-89A1-4448-9C11-EA026D721EA3}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HashMap-1.0", "Libraries\HashMap\1.0\HashMap\HashMap-1.0.vcxitems", "{190C3912-7460-4798-9831-9F4D48A79EEE}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DallasTemperature-3.8.0", "Libraries\DallasTemperature\3.8.0\DallasTemperature\DallasTemperature-3.8.0.vcxitems", "{F91476F0-D034-46CE-AB56-CEEF0B604F2C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SPI-1.0", "Libraries\SPI\1.0\SPI\SPI-1.0.vcxitems", "{E67794A7-7E39-4A5F-AEA3-66E6857E17E0}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ArduinoJson-6.14.0", "Libraries\ArduinoJson\6.14.0\ArduinoJson\ArduinoJson-6.14.0.vcxitems", "{0E985A9D-59B3-4178-84E2-6BEC6EEB87CB}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FIFO_CB-1.0", "Libraries\FIFO_CB\1.0\FIFO_CB\FIFO_CB-1.0.vcxitems", "{8B120E42-02EA-417B-99BD-149E9546165D}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Libraries\OneWire\2.3.5\OneWire\OneWire-2.3.5.vcxitems*{0abbd25d-2268-481c-a541-8775957262cd}*SharedItemsImports = 9
+		Libraries\WiFi\1.2.7\WiFi\WiFi-1.2.7.vcxitems*{0e49ddbe-de44-4aa6-b12d-aaf828f436ac}*SharedItemsImports = 9
+		Libraries\ArduinoJson\6.14.0\ArduinoJson\ArduinoJson-6.14.0.vcxitems*{0e985a9d-59b3-4178-84e2-6bec6eeb87cb}*SharedItemsImports = 9
+		Libraries\Wire\1.0\Wire\Wire-1.0.vcxitems*{0f45c88c-229f-4dab-b7e0-4c0cb8289737}*SharedItemsImports = 9
+		Libraries\HashMap\1.0\HashMap\HashMap-1.0.vcxitems*{190c3912-7460-4798-9831-9f4d48a79eee}*SharedItemsImports = 9
+		Libraries\Ethernet\2.0.0\Ethernet\Ethernet-2.0.0.vcxitems*{3b53cdcb-89a1-4448-9c11-ea026d721ea3}*SharedItemsImports = 9
+		Libraries\LiquidCrystal_I2C\1.1.2\LiquidCrystal_I2C\LiquidCrystal_I2C-1.1.2.vcxitems*{3d786d50-e220-4efa-9eae-5eb599f2a914}*SharedItemsImports = 9
+		Libraries\FIFO_CB\1.0\FIFO_CB\FIFO_CB-1.0.vcxitems*{8b120e42-02ea-417b-99bd-149e9546165d}*SharedItemsImports = 9
+		Libraries\DallasTemperature\3.8.0\DallasTemperature\DallasTemperature-3.8.0.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
+		Libraries\Ethernet\2.0.0\Ethernet\Ethernet-2.0.0.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
+		Libraries\HashMap\1.0\HashMap\HashMap-1.0.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
+		Libraries\LiquidCrystal_I2C\1.1.2\LiquidCrystal_I2C\LiquidCrystal_I2C-1.1.2.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
+		Libraries\OneWire\2.3.5\OneWire\OneWire-2.3.5.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
+		Libraries\RTClib-master\1.3.2\RTClib-master\RTClib-master-1.3.2.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
+		Libraries\SD\1.2.4\SD\SD-1.2.4.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
+		Libraries\SPI\1.0\SPI\SPI-1.0.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
+		Libraries\WiFi\1.2.7\WiFi\WiFi-1.2.7.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
+		Libraries\Wire\1.0\Wire\Wire-1.0.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
+		Libraries\SD\1.2.4\SD\SD-1.2.4.vcxitems*{d9184526-a426-40cc-8f84-8a77e484420d}*SharedItemsImports = 9
+		Libraries\SPI\1.0\SPI\SPI-1.0.vcxitems*{e67794a7-7e39-4a5f-aea3-66e6857e17e0}*SharedItemsImports = 9
+		Libraries\RTClib-master\1.3.2\RTClib-master\RTClib-master-1.3.2.vcxitems*{f039c173-bc09-4688-a00f-678acb3c48d7}*SharedItemsImports = 9
+		Libraries\DallasTemperature\3.8.0\DallasTemperature\DallasTemperature-3.8.0.vcxitems*{f91476f0-d034-46ce-ab56-ceef0b604f2c}*SharedItemsImports = 9
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Debug|x86.ActiveCfg = Debug|Win32
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Release|x86.ActiveCfg = Release|Win32
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {16290DAE-F5EF-4C40-B012-48473886DC31}
+	EndGlobalSection
+EndGlobal
