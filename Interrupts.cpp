@@ -2,8 +2,7 @@
 // 
 // 
 #include "Interrupts.h"
-#include <FIFO_CB.h>
-
+#include "FIFO_AF.h"
 /*
 Interrupt notes
 	There are three interrupts types used in the pump system:
@@ -48,32 +47,11 @@ static volatile long _lastVaccumMillis;
 static volatile long _lastTimer1;
 static volatile int _infosCount = 0;
 // static InterruptInfoClass interruptInfos[INTERRUPT_INFOS_SIZE];
-static FIFO_CB fifoQueue;
+static FIFO_AF fifoQueue;
 
 
 void InterruptsClass::Init() {
 	Serial.print("enter Interrupt");
-
-	// initialize Timer1
-	noInterrupts(); // disable all interrupts
-	TCCR1A = 0;
-	TCCR1B = 0;
-
-	TCNT1 = 34286; // preload timer 65536-16MHz/256/2Hz
-	TCCR1B |= (1 << CS12); // 256 prescaler
-	TIMSK1 |= (1 << TOIE1); // enable timer overflow interrupt
-	interrupts(); // enable all interrupts
-}
-
-
-ISR(Timer1_OVF_vect) // interrupt service routine that wraps a user defined function supplied by attachInterrupt
-{
-	noInterrupts(); // disable all interrupts
-	TCNT1 = 34286; // preload timer
-	CheckSensors = true;
-	interrupts(); // enable all interrupts
-}
-
 
 int InterruptsClass::QueueSize() {
 	return fifoQueue.size();
@@ -90,7 +68,7 @@ bool InterruptsClass::IsInterruptQueued() {
 int QueueSize() {
 	return fifoQueue.size();
 }
-void InterruptsClass::RunNextInterruptFunction() {
+void InterruptsClass::GetNextInterruptFunction() {
 	int a = fifoQueue.size();
 	if(fifoQueue.size() > 0) {
 		fifoQueue.pop()();
@@ -103,13 +81,6 @@ void InterruptsClass::Restart() {
 }
 void InterruptsClass::Shutdown() {
 	
-}
-
-void InterruptsClass::StartInterrupts() {
-	sei();//allow interrupts
-}
-void InterruptsClass::StopInterrupts() {
-	cli();//stop interrupts 
 }
 
 InterruptsClass Interrupts;

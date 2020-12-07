@@ -25,24 +25,26 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DallasTemperature-3.8.0", "
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SPI-1.0", "Libraries\SPI\1.0\SPI\SPI-1.0.vcxitems", "{E67794A7-7E39-4A5F-AEA3-66E6857E17E0}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ArduinoJson-6.14.0", "Libraries\ArduinoJson\6.14.0\ArduinoJson\ArduinoJson-6.14.0.vcxitems", "{0E985A9D-59B3-4178-84E2-6BEC6EEB87CB}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ArduinoJson-6.14.0", "Libraries\ArduinoJson\6.14.0\ArduinoJson\ArduinoJson-6.14.0.vcxitems", "{55486D7A-D73A-4337-A0C6-CE4087E6CE90}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FIFO_CB-1.0", "Libraries\FIFO_CB\1.0\FIFO_CB\FIFO_CB-1.0.vcxitems", "{8B120E42-02EA-417B-99BD-149E9546165D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OneWire-master-2.3.5", "Libraries\OneWire-master\2.3.5\OneWire-master\OneWire-master-2.3.5.vcxitems", "{0D25AECB-3230-4B44-B636-36FFE615FF29}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Libraries\OneWire\2.3.5\OneWire\OneWire-2.3.5.vcxitems*{0abbd25d-2268-481c-a541-8775957262cd}*SharedItemsImports = 9
+		Libraries\OneWire-master\2.3.5\OneWire-master\OneWire-master-2.3.5.vcxitems*{0d25aecb-3230-4b44-b636-36ffe615ff29}*SharedItemsImports = 9
 		Libraries\WiFi\1.2.7\WiFi\WiFi-1.2.7.vcxitems*{0e49ddbe-de44-4aa6-b12d-aaf828f436ac}*SharedItemsImports = 9
-		Libraries\ArduinoJson\6.14.0\ArduinoJson\ArduinoJson-6.14.0.vcxitems*{0e985a9d-59b3-4178-84e2-6bec6eeb87cb}*SharedItemsImports = 9
 		Libraries\Wire\1.0\Wire\Wire-1.0.vcxitems*{0f45c88c-229f-4dab-b7e0-4c0cb8289737}*SharedItemsImports = 9
 		Libraries\HashMap\1.0\HashMap\HashMap-1.0.vcxitems*{190c3912-7460-4798-9831-9f4d48a79eee}*SharedItemsImports = 9
 		Libraries\Ethernet\2.0.0\Ethernet\Ethernet-2.0.0.vcxitems*{3b53cdcb-89a1-4448-9c11-ea026d721ea3}*SharedItemsImports = 9
 		Libraries\LiquidCrystal_I2C\1.1.2\LiquidCrystal_I2C\LiquidCrystal_I2C-1.1.2.vcxitems*{3d786d50-e220-4efa-9eae-5eb599f2a914}*SharedItemsImports = 9
-		Libraries\FIFO_CB\1.0\FIFO_CB\FIFO_CB-1.0.vcxitems*{8b120e42-02ea-417b-99bd-149e9546165d}*SharedItemsImports = 9
+		Libraries\ArduinoJson\6.14.0\ArduinoJson\ArduinoJson-6.14.0.vcxitems*{55486d7a-d73a-4337-a0c6-ce4087e6ce90}*SharedItemsImports = 9
+		Libraries\ArduinoJson\6.14.0\ArduinoJson\ArduinoJson-6.14.0.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
 		Libraries\DallasTemperature\3.8.0\DallasTemperature\DallasTemperature-3.8.0.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
 		Libraries\Ethernet\2.0.0\Ethernet\Ethernet-2.0.0.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
 		Libraries\HashMap\1.0\HashMap\HashMap-1.0.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
 		Libraries\LiquidCrystal_I2C\1.1.2\LiquidCrystal_I2C\LiquidCrystal_I2C-1.1.2.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
+		Libraries\OneWire-master\2.3.5\OneWire-master\OneWire-master-2.3.5.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
 		Libraries\OneWire\2.3.5\OneWire\OneWire-2.3.5.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
 		Libraries\RTClib-master\1.3.2\RTClib-master\RTClib-master-1.3.2.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
 		Libraries\SD\1.2.4\SD\SD-1.2.4.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4

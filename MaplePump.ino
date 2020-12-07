@@ -1,22 +1,21 @@
+#include <OneWire.h>
+#include <ArduinoJson.hpp>
+#include <ArduinoJson.h>
 // Visual Micro is in vMicro>General>Tutorial Mode
 // 
 /*
-    Name:       Quagmire.ino
+    Name:       MaplePump.ino
     Created:	10/23/2019 3:33:20 PM
     Author:     ABBOTT-LAP\Abbott
 */
 
-// The setup() function runs once each time the micro-controller starts
 #include "Heater.h"
 #include "TankFloat.h"
-#include "TestSapSolinoids.h"
-#include "TestTemperature_Pumps_Heater.h"
-#include "TestLogging.h"
 #include "DefinedValues.h"
 #include "Enms.h"
+#include "FIFO_AF.h"
 #include "FlowMeter.h"
 #include "Interrupts.h"
-#include "Json.h"
 #include "LCD.h"
 #include "Logger.h"
 #include "Log.h"
@@ -26,7 +25,6 @@
 #include "SapLines.h"
 #include "SDCard.h"
 #include "Statics.h"
-#include "TempCheck.h"
 #include "USBTester.h"
 #include "Vacuum.h"
 #include "VacuumPump.h"
@@ -60,7 +58,7 @@ void LocalSetup() {
 		LCDClass::Init();
 		SDCardClass::Init();
 		TankFloatClass::Init();
-		TempCheckClass::Init();
+		//TempCheckClass::Init();
 		VacuumPumpClass::Init();
 		SapTankPumpClass::Init();
 		TankFloatClass::Init();
@@ -87,7 +85,7 @@ void loop()
 	String time = RTClockClass::GetTimeStamp(DATE_TIME) + " :";
 		Serial.println(time + size);
 	if (CheckSensors) {
-		InterruptsClass::CheckSensors();
+		//InterruptsClass::CheckSensors();
 		Serial.println(time + " CheckSensors");
 		CheckSensors = false;
 	}
