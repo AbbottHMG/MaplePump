@@ -2,7 +2,7 @@
 // 
 // 
 #include "Interrupts.h"
-#include "FIFO_AF.h"
+#include "InteruptBuffer.h"
 /*
 Interrupt notes
 	There are three interrupts types used in the pump system:
@@ -47,18 +47,11 @@ static volatile long _lastVaccumMillis;
 static volatile long _lastTimer1;
 static volatile int _infosCount = 0;
 // static InterruptInfoClass interruptInfos[INTERRUPT_INFOS_SIZE];
-static FIFO_AF fifoQueue;
 
 
 void InterruptsClass::Init() {
 	Serial.print("enter Interrupt");
-
-int InterruptsClass::QueueSize() {
-	return fifoQueue.size();
-}
-
-void InterruptsClass::TimeCheckSensors() {
-	fifoQueue.push(InterruptsClass::CheckSensors);
+	InteruptBufferClass::init();
 }
 
 bool InterruptsClass::IsInterruptQueued() {

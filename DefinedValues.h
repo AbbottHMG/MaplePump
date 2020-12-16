@@ -44,9 +44,16 @@ static volatile bool TankFloatInterruptRaised = false;
 #define INTERVAL_TEMPERATURE 3
 #define INTERVAL_LINE_ON_OFF_DELAY  2  // In seconds
 #define INTERVAL_VACUUM 1
-constexpr long Timer_1_Sec = 1000000;
-constexpr long Timer_1_Tenth = 100000;
-constexpr long Timer_1_Mill = 1000;
+constexpr long Mills_Sec = 1000;
+constexpr long Mills_5Sec = 5000;
+constexpr long Mills_10Sec = 10000;
+constexpr long Mills_Min = 60000;
+constexpr long Mills_5Min = 300000;
+constexpr long Timer_Milli = 1000;
+constexpr long Timer_Tenth = 100000;
+constexpr long Timer_Sec = 1000000;
+constexpr long Timer_Min = 60000000;
+constexpr long Timer_5Min = 300000000;
 
 // Json defines
 #define ARDUINOJSON_USE_DOUBLE 0

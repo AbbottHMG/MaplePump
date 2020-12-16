@@ -1,3 +1,7 @@
+#include "CallbackSensorCheck.h"
+#include "Callback.h"
+#include "Interrupt_Callback.h"
+#include <CircularBuffer.h>
 #include <OneWire.h>
 #include <ArduinoJson.hpp>
 #include <ArduinoJson.h>
@@ -13,7 +17,6 @@
 #include "TankFloat.h"
 #include "DefinedValues.h"
 #include "Enms.h"
-#include "FIFO_AF.h"
 #include "FlowMeter.h"
 #include "Interrupts.h"
 #include "LCD.h"

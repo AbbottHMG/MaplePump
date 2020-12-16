@@ -113,3 +113,24 @@ String EnumsClass::EnumStr(EnumsClass::Temperature temperature) {
 		break;
 	}
 }
+
+String EnumsClass::EnumStr(EnumsClass::Interrupt interrupts) {
+	switch (interrupts)
+	{
+	case EnumsClass::CheckInTemp:
+		return "CheckInTemp";
+		break;
+	case EnumsClass::CheckMinSensors:
+		return "CheckMinSensors"; 
+		break;
+	case EnumsClass::CheckSapFloat:
+		return "CheckSapFloat";
+		break;
+	case EnumsClass::CheckSapLines:
+		return "CheckSapLines";
+		break;
+	case EnumsClass::Void:
+		return "Void";
+		break;
+	}
+}
