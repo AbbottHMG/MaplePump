@@ -6,35 +6,35 @@
 
 void InteruptBufferClass::init()
 {
-	buffer.clear();
+	InteruptBufferClass::interuptBuffer.clear();
 }
 	// FIFO peek at head
-	EnumsClass::Interrupt InteruptBufferClass::peek(){
-		return  buffer.first();
+	InteruptorClass InteruptBufferClass::peek(){
+		return  InteruptBufferClass::interuptBuffer.first();
 	}
 	// FIFO pop head
-	EnumsClass::Interrupt InteruptBufferClass::pop(){
-		return  buffer.pop();
+	InteruptorClass InteruptBufferClass::pop(){
+		return  InteruptBufferClass::interuptBuffer.pop();
 	}
 	// LIFO pull from tail
-	EnumsClass::Interrupt InteruptBufferClass::pull(){
-		return  buffer.last();
+	InteruptorClass InteruptBufferClass::pull(){
+		return  InteruptBufferClass::interuptBuffer.last();
 	}
 	// FIFO push into tail
-	bool InteruptBufferClass::push(EnumsClass::Interrupt action){
+	bool InteruptBufferClass::push(InteruptorClass interuptor){
 		bool overflow = false;
-		overflow = buffer.push(action);
+		overflow = InteruptBufferClass::interuptBuffer.push(interuptor);
 		return overflow;
 	}
 	// FIFO Push high priority action to head
-	bool InteruptBufferClass::pushhead(EnumsClass::Interrupt action){
+	bool InteruptBufferClass::pushhead(InteruptorClass interuptor){
 		bool overflow = false;
-		overflow = buffer.unshift(action);
+		overflow = InteruptBufferClass::interuptBuffer.unshift(interuptor);
 		return overflow;
 	}
 	// Get number of enries
 	int InteruptBufferClass::size(){
-		return buffer.size();
+		return InteruptBufferClass::interuptBuffer.size();
 	}
 
 InteruptBufferClass InteruptBuffer;

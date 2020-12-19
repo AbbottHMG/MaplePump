@@ -58,7 +58,7 @@ class EnumsClass
 		 OutInRange,
 	 };
 
-	 enum Interrupt{
+	 enum Interupt{
 		CheckInTemp,
 		CheckMinSensors, // vacuum, outTemp
 		CheckSapFloat,
@@ -70,7 +70,7 @@ class EnumsClass
 	 static String EnumStr(JsonType jsonType);
 	 static String EnumStr(State state);
 	 static String EnumStr(Temperature temperature);
-	 static String EnumStr(Interrupt interrupt);
+	 static String EnumStr(Interupt interrupt);
 };
 
 extern EnumsClass Enms;

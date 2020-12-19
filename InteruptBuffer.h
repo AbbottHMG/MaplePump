@@ -9,20 +9,21 @@
 	#include "WProgram.h"
 #endif
 #include "Enms.h"
+#include "Interuptor.h"
 #include <CircularBuffer.h>
 const int BufferSize = 20;
 class InteruptBufferClass
 {
  protected:
 
- public:
-	static  CircularBuffer<EnumsClass::Interrupt, BufferSize> buffer;
+public:
+	static  CircularBuffer<InteruptorClass, BufferSize> interuptBuffer;
 	static void init();
-	static EnumsClass::Interrupt peek();
-	static EnumsClass::Interrupt pop();
-	static EnumsClass::Interrupt pull();
-	static bool push(EnumsClass::Interrupt action);
-	static bool pushhead(EnumsClass::Interrupt action);
+	static InteruptorClass peek();
+	static InteruptorClass pop();
+	static InteruptorClass pull();
+	static bool push(InteruptorClass interuptor);
+	static bool pushhead(InteruptorClass interuptor);
 	static int size();
 };
 

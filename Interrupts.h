@@ -11,20 +11,17 @@
 #include "DefinedValues.h"
 #include "Enms.h"
 #include "InteruptBuffer.h"
+#include "Interuptor.h"
 
 class InterruptsClass
 {
 private:
 public:
-	static void CheckPins();
-	static void Init();
-	static bool IsInterruptQueued();
-	static void TimeCheckSensors();
-	static void Restart();
-	static void RunNextInterruptFunction();
-	static void StartInterrupts();
-	static void StopInterrupts();
-	static void Shutdown();
+	static void push(InteruptorClass interuptor);
+	static void priority(InteruptorClass interuptor);
+	static int interuptCount();
+	static bool hasInterupts();
+	static InteruptorClass runNextInterupt()
 };
 
 extern InterruptsClass Interrupts;

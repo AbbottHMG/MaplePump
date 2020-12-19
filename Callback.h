@@ -13,11 +13,10 @@
 class CallbackClass
 {
  protected:
-	static EnumsClass::Interrupt _thisInterrupt;
+	static EnumsClass::Interupt _thisInterrupt;
 	 static long _millisLast;
 	 static long _millisWait; // lenght of wait for last function call
 	 static bool okToRun();
-	 static void popBuffer();
 	 virtual void run(); 
  public:
 	static void init(long millisWait);
