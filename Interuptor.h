@@ -8,7 +8,7 @@
 #else
 	#include "WProgram.h"
 #endif
-#include "Enms.h"
+#include "Enums.h"
 typedef void (*fPointer)();
 class InteruptorClass
 {

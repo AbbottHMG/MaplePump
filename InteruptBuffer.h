@@ -8,7 +8,7 @@
 #else
 	#include "WProgram.h"
 #endif
-#include "Enms.h"
+#include "Enums.h"
 #include "Interuptor.h"
 #include <CircularBuffer.h>
 const int BufferSize = 20;

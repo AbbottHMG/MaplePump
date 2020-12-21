@@ -1,7 +1,7 @@
 // Enms.h
 
-#ifndef _ENMS_h
-#define _ENMS_h
+#ifndef _ENUMS_h
+#define _ENUMS_h
 
 #if defined(ARDUINO) && ARDUINO >= 100
 	#include "arduino.h"
@@ -55,7 +55,10 @@ class EnumsClass
 		 InHot,
 		 InInRange,
 		 OutCold,
+		 OutHot,
 		 OutInRange,
+		 TurnOn,
+		 TurnOff,
 	 };
 
 	 enum Interupt{
@@ -73,7 +76,7 @@ class EnumsClass
 	 static String EnumStr(Interupt interrupt);
 };
 
-extern EnumsClass Enms;
+extern EnumsClass Enums;
 
 #endif
 

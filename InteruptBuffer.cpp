@@ -20,16 +20,16 @@ void InteruptBufferClass::init()
 	InteruptorClass InteruptBufferClass::pull(){
 		return  InteruptBufferClass::interuptBuffer.last();
 	}
-	// FIFO push into tail
-	bool InteruptBufferClass::push(InteruptorClass interuptor){
-		bool overflow = false;
-		overflow = InteruptBufferClass::interuptBuffer.push(interuptor);
-		return overflow;
-	}
 	// FIFO Push high priority action to head
 	bool InteruptBufferClass::pushhead(InteruptorClass interuptor){
 		bool overflow = false;
 		overflow = InteruptBufferClass::interuptBuffer.unshift(interuptor);
+		return overflow;
+	}
+	// FIFO push into tail
+	bool InteruptBufferClass::push(InteruptorClass interuptor){
+		bool overflow = false;
+		overflow = InteruptBufferClass::interuptBuffer.push(interuptor);
 		return overflow;
 	}
 	// Get number of enries

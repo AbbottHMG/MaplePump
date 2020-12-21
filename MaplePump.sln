@@ -31,6 +31,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OneWire-master-2.3.5", "Lib
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CircularBuffer-master-1.3.3", "Libraries\CircularBuffer-master\1.3.3\CircularBuffer-master\CircularBuffer-master-1.3.3.vcxitems", "{66F8DDCF-9894-4D55-88DE-3FB5B11A8F48}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TimerOne-master-1.1", "Libraries\TimerOne-master\1.1\TimerOne-master\TimerOne-master-1.1.vcxitems", "{5CAAD9C8-6D02-4B4B-9E4B-EC0E8F8BC0B6}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TimerThree-master-1.1", "Libraries\TimerThree-master\1.1\TimerThree-master\TimerThree-master-1.1.vcxitems", "{B3345E0E-7BA5-43C8-B185-01B58423EE22}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Libraries\OneWire\2.3.5\OneWire\OneWire-2.3.5.vcxitems*{0abbd25d-2268-481c-a541-8775957262cd}*SharedItemsImports = 9
@@ -41,7 +45,9 @@ Global
 		Libraries\Ethernet\2.0.0\Ethernet\Ethernet-2.0.0.vcxitems*{3b53cdcb-89a1-4448-9c11-ea026d721ea3}*SharedItemsImports = 9
 		Libraries\LiquidCrystal_I2C\1.1.2\LiquidCrystal_I2C\LiquidCrystal_I2C-1.1.2.vcxitems*{3d786d50-e220-4efa-9eae-5eb599f2a914}*SharedItemsImports = 9
 		Libraries\ArduinoJson\6.14.0\ArduinoJson\ArduinoJson-6.14.0.vcxitems*{55486d7a-d73a-4337-a0c6-ce4087e6ce90}*SharedItemsImports = 9
+		Libraries\TimerOne-master\1.1\TimerOne-master\TimerOne-master-1.1.vcxitems*{5caad9c8-6d02-4b4b-9e4b-ec0e8f8bc0b6}*SharedItemsImports = 9
 		Libraries\CircularBuffer-master\1.3.3\CircularBuffer-master\CircularBuffer-master-1.3.3.vcxitems*{66f8ddcf-9894-4d55-88de-3fb5b11a8f48}*SharedItemsImports = 9
+		Libraries\TimerThree-master\1.1\TimerThree-master\TimerThree-master-1.1.vcxitems*{b3345e0e-7ba5-43c8-b185-01b58423ee22}*SharedItemsImports = 9
 		Libraries\ArduinoJson\6.14.0\ArduinoJson\ArduinoJson-6.14.0.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
 		Libraries\CircularBuffer-master\1.3.3\CircularBuffer-master\CircularBuffer-master-1.3.3.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
 		Libraries\DallasTemperature\3.8.0\DallasTemperature\DallasTemperature-3.8.0.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
@@ -53,6 +59,8 @@ Global
 		Libraries\RTClib-master\1.3.2\RTClib-master\RTClib-master-1.3.2.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
 		Libraries\SD\1.2.4\SD\SD-1.2.4.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
 		Libraries\SPI\1.0\SPI\SPI-1.0.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
+		Libraries\TimerOne-master\1.1\TimerOne-master\TimerOne-master-1.1.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
+		Libraries\TimerThree-master\1.1\TimerThree-master\TimerThree-master-1.1.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
 		Libraries\WiFi\1.2.7\WiFi\WiFi-1.2.7.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
 		Libraries\Wire\1.0\Wire\Wire-1.0.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
 		Libraries\SD\1.2.4\SD\SD-1.2.4.vcxitems*{d9184526-a426-40cc-8f84-8a77e484420d}*SharedItemsImports = 9

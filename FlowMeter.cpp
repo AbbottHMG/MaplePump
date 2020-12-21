@@ -42,7 +42,7 @@ void FlowMeterClass::Init() {
 		// InterruptsClass::AttachInterrupt(FLOW_SENSOR_INTERRUPT, pulseCounter, FALLING);
 
 			// Enable the interrupt 
-		InterruptsClass::StartInterrupts();
+		InteruptClass::startInterupts();
 	}
 void FlowMeterClass::ProcessSlice() {
 
@@ -50,7 +50,8 @@ void FlowMeterClass::ProcessSlice() {
 		{
 			// Disable interrupt while calculating flow rate and sending the value to
 			// the host
-			InterruptsClass::StopInterrupts();
+
+			InteruptClass::stopInterupts();
 
 			// Because this loop may not complete in exactly 1 second intervals we calculate
 			// the number of milliseconds that have passed since the last execution and use
@@ -83,7 +84,7 @@ void FlowMeterClass::ProcessSlice() {
 			pulseCount = 0;
 
 			// Enable the interrupt again now that we've finished sending output
-			InterruptsClass::StartInterrupts();
+			InteruptClass::startInterupts();
 		}
 	}
 

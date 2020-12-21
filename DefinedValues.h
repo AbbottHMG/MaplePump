@@ -24,9 +24,6 @@ static volatile bool TankFloatInterruptRaised = false;
 #define PINS_SAP_TANK_PUMP 5  // ?????
 #define PINS_SD_CARD 4
 #define PINS_SD_CARD_SLAVE 10
-#define PINS_TEMP_IN_ONE_WIRE 8
-#define PINS_TEMP_OUT_ONE_WIRE 9
-#define PINS_TEMP_OUT 4
 #define PINS_USB_ANALOG 4 
 #define PINS_VACUUM_ANALOG 3
 #define PINS_VACUUM_PUMP 48  // ?????
@@ -84,8 +81,12 @@ constexpr long Timer_5Min = 300000000;
 #define SAP_PUMPING "Pumping"
 
 // Temperature Values
-#define INSIDETEMP 0
-#define OUTSIDETEMP 1
+#define TEMP_INSIDE 0
+#define TEMP_OUTSIDE 1
+#define TEMP_IN_ID 8
+#define TEMP_OUT_ID 9
+#define TEMP_PIN 4
+#define TEMP_BUF_DEG 1.0
 
 #define INSIDE_HIGHTEMP  42.0
 #define INSIDE_LOWTEMP  32.1

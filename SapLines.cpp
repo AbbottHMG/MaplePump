@@ -3,9 +3,6 @@
 // 
 
 
-#include "Enms.h"
-#include "Log.h"
-#include "DefinedValues.h"
 #include "SapLines.h"
 
 static int* linesToUse;
@@ -27,15 +24,15 @@ Note: we do not use arduino delay but our Statics::Delay(waittime)
  and the function returns to loop.
  Each time the function is called, each line is turned off
  and when they are all turned off the line-tests start.
- There is a 2 second delay between each turn-off and test. 
- FOr the test, the line is turned-on and tested. If ng, it's turned off.
+ There is a ?? second delay between each turn-off and test. 
+ FOr the test, the line is turned-on and vacuum tested. If ng, it's turned off.
  Once all the line tests are done, the line-test log entry
  is written and the timed-interrupt flag is reset.
  The whole process should take less than a minute.
 */
 
 
-bool SapLinesClass::CheckAllLines() {
+bool SapLinesClass::CheckAllLines(InteruptorClass interuptor) {
 	
 	switch (_sapLineTestCounter)
 	{
@@ -43,9 +40,9 @@ bool SapLinesClass::CheckAllLines() {
 		SapLinesClass::TurnOffAllLines();
 		break;
 	default:
-		_myLines[_sapLineTestCounter]->ShutMeOff();
+		_myLines[_sapLineTestCounter]->TurnMeOn();
 		if (!VacuumClass::IsVacuumLost) {
-			_myLines[_sapLineTestCounter]->TurnMeOn();
+			_myLines[_sapLineTestCounter]->ShutMeOff();
 		}
 		_sapLineTestCounter++;
 		if (_sapLineTestCounter > _lineCount) {

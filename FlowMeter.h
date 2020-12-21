@@ -9,7 +9,7 @@
 	#include "WProgram.h"
 #endif
 #include "DefinedValues.h"
-#include "Interrupts.h"
+#include "Interupt.h"
 #include "Statics.h"
 #include "log.h"
 

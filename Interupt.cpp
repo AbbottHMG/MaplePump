@@ -1,8 +1,7 @@
 // interrupts.cpp
 // 
 // 
-#include "Interrupts.h"
-#include "InteruptBuffer.h"
+#include "Interupt.h"
 /*
 Interrupt notes
 	There are three interrupts types used in the pump system:
@@ -40,41 +39,50 @@ Each rep:
 		Counter++
 		return
 */
-// Timed interupt clocks
-static volatile long _lastTempMillis;
-static volatile long _lastVaccumMillis;
 
-static volatile long _lastTimer1;
-static volatile int _infosCount = 0;
-// static InterruptInfoClass interruptInfos[INTERRUPT_INFOS_SIZE];
-
-
-void InterruptsClass::Init() {
+void InteruptClass::init() {
 	Serial.print("enter Interrupt");
 	InteruptBufferClass::init();
 }
 
-bool InterruptsClass::IsInterruptQueued() {
-	return fifoQueue.size() > 0;
-}          
-
-int QueueSize() {
-	return fifoQueue.size();
+bool InteruptClass::push(InteruptorClass interuptor){
+	InteruptBufferClass::push(interuptor);
 }
-void InterruptsClass::GetNextInterruptFunction() {
-	int a = fifoQueue.size();
-	if(fifoQueue.size() > 0) {
-		fifoQueue.pop()();
+
+int InteruptClass::interuptCount(){
+		return InteruptBufferClass::size();	
+}
+
+bool InteruptClass::priority(InteruptorClass interuptor){
+	InteruptBufferClass::pushhead(interuptor);
+}
+
+bool InteruptClass::hasInterupts(){
+	int interruptCount = InteruptBufferClass::size();
+	return (interruptCount > 0);
+}
+
+InteruptorClass InteruptClass::runNextInterupt()
+{
+	InteruptorClass interuptor  = InteruptBufferClass::peek();
+	if(interuptor.canRunFunction()){
+		interuptor.runInterupt();
+		if(interuptor.canInteruptInfoBeDeleted()){
+			InteruptBufferClass::pop();
+		}
+	}
+	else 
+	{
+	// do nothimg
 	}
 }
-void InterruptsClass::CheckPins() { 
-}
-void InterruptsClass::Restart() {
-	
-}
-void InterruptsClass::Shutdown() {
-	
+
+void InteruptClass::startInterupts(){
+
 }
 
-InterruptsClass Interrupts;
+void InteruptClass::stopInterupts(){
+
+}
+InteruptClass Interrupt;
 

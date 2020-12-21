@@ -11,7 +11,7 @@
 
 #include <ArduinoJson.h>
 #include "DefinedValues.h"
-#include "Enms.h"
+#include "Enums.h"
 #include "Log.h"
 class JsonClass
 {

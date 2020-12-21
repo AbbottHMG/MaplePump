@@ -9,7 +9,7 @@
 	#include "WProgram.h"
 #endif
 
-#include "Enms.h"
+#include "Enums.h"
 #include "Json.h"
 #include "Log.h"
 #include "LCD.h"

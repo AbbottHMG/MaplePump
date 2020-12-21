@@ -8,10 +8,14 @@
 #else
 	#include "WProgram.h"
 #endif
-#include"SapLine.h"
-#include "ValveRelays.h"
-#include "Vacuum.h"
+
+#include "Enums.h"
+#include "DefinedValues.h"
+#include "Interuptor.h"
 #include "Log.h"
+#include "Vacuum.h"
+#include "ValveRelays.h"
+#include"SapLine.h"
 class SapLinesClass
 {
 protected:
@@ -20,7 +24,7 @@ protected:
 	static String GetActiveLines();
 public:
 	static void Init();
-	static bool CheckAllLines();
+	static bool CheckAllLines(InteruptorClass interuptor);
 	static void TurnOffAllLines();
 	static void TurnOnAllLines();
 	static int GetActiveLineCount();

@@ -1,6 +1,6 @@
-#include "CallbackSensorCheck.h"
-#include "Callback.h"
-#include "Interrupt_Callback.h"
+#include "TemperatureChecks.h"
+#include <TimerThree.h>
+#include <TimerOne.h>
 #include <CircularBuffer.h>
 #include <OneWire.h>
 #include <ArduinoJson.hpp>
@@ -16,9 +16,9 @@
 #include "Heater.h"
 #include "TankFloat.h"
 #include "DefinedValues.h"
-#include "Enms.h"
+#include "Enums.h"
 #include "FlowMeter.h"
-#include "Interrupts.h"
+#include "Interupt.h"
 #include "LCD.h"
 #include "Logger.h"
 #include "Log.h"
@@ -38,7 +38,6 @@ SapLinesClass *sapLines = new SapLinesClass();
 static bool _setUpComplete = false;
 void setup()
 {
-	int testCount = 0;
 	 Serial.begin(115200);
 	 while (!Serial);      // For 32u4 based microcontrollers like 32u4 Adalogger Feather
 // Do all the initializtion here
@@ -64,15 +63,15 @@ void LocalSetup() {
 		//TempCheckClass::Init();
 		VacuumPumpClass::Init();
 		SapTankPumpClass::Init();
-		TankFloatClass::Init();
 		ValveRelaysClass::Init();
 		sapLines->Init();
 		SapLinesClass::TurnOnAllLines();
 		Serial.println("Call Interrupt");
-		InterruptsClass::Init();
+		InteruptClass::init();
 		//initializeState();
 		Serial.print("Startup End Free RAM: ");
 		Serial.println(FreeRam());
+
 		Serial.println("Startup End");
 		LoggerClass::LogEntry();
 		_setUpComplete = true;
@@ -84,7 +83,7 @@ int NextCounter = 0;
 void loop()
 {
 
-	int size = InterruptsClass::QueueSize();
+	int size = InteruptClass::interuptCount();
 	String time = RTClockClass::GetTimeStamp(DATE_TIME) + " :";
 		Serial.println(time + size);
 	if (CheckSensors) {
@@ -92,10 +91,10 @@ void loop()
 		Serial.println(time + " CheckSensors");
 		CheckSensors = false;
 	}
-	size = InterruptsClass::QueueSize();
+	size = InteruptClass::interuptCount();
 	Serial.println(size + "FifoSize");
 	if(size > 0){
-		InterruptsClass::RunNextInterruptFunction();
+		//InteruptClass::;
 	}
 	else{
 		Serial.println(time + "Fifo Empty");
