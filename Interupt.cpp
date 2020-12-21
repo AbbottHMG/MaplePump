@@ -47,6 +47,7 @@ void InteruptClass::init() {
 
 bool InteruptClass::push(InteruptorClass interuptor){
 	InteruptBufferClass::push(interuptor);
+<<<<<<< HEAD:Interupt.cpp
 }
 
 int InteruptClass::interuptCount(){
@@ -84,5 +85,38 @@ void InteruptClass::startInterupts(){
 void InteruptClass::stopInterupts(){
 
 }
+=======
+}
+
+int InteruptClass::interuptCount(){
+		return InteruptBufferClass::size();	
+}
+
+bool InteruptClass::priority(InteruptorClass interuptor){
+	InteruptBufferClass::pushhead(interuptor);
+}
+
+bool InteruptClass::hasInterupts(){
+	int interruptCount = InteruptBufferClass::size();
+	return (interruptCount > 0);
+}
+
+InteruptorClass InteruptClass::runNextInterupt()
+{
+	InteruptorClass interuptor  = InteruptBufferClass::peek();
+	if(interuptor.canRunFunction()){
+		interuptor.runInterupt();
+		if(interuptor.canInteruptInfoBeDeleted()){
+			InteruptBufferClass::pop();
+		}
+	}
+	else 
+	{
+	// do nothimg
+	}
+}
+
+
+>>>>>>> 6358d16... Bunch of changes:Interrupts.cpp
 InteruptClass Interrupt;
 

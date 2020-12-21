@@ -1,0 +1,13 @@
+diff a/Interupt.h b/Interupt.h	(rejected hunks)
+@@ -26,8 +26,11 @@
+  	static int interuptCount();
+  	static bool hasInterupts();
+  	static InteruptorClass runNextInterupt();
+++<<<<<<< HEAD
+ +	static void startInterupts();
+ +	static void stopInterupts();
+++=======
+++>>>>>>> 6358d16... Bunch of changes
+  };
+  
+  extern InteruptClass Interupt;

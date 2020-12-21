@@ -1,0 +1,9 @@
+diff a/Interupt.cpp b/Interupt.cpp	(rejected hunks)
+@@ -47,6 +47,7 @@
+  
+  bool InteruptClass::push(InteruptorClass interuptor){
+  	InteruptBufferClass::push(interuptor);
+++<<<<<<< HEAD:Interupt.cpp
+  }
+  
+  int InteruptClass::interuptCount(){
