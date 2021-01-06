@@ -37,7 +37,8 @@ String EnumsClass::EnumStr(EnumsClass::Action action){
 		return "VC";
 		break;
 	default:
-		return "??";
+		default:
+		return "Invalid Enum";
 		break;
 	}
 }
@@ -53,7 +54,8 @@ String EnumsClass::EnumStr(EnumsClass::JsonType jsonType){
 		return "VC";
 		break;
 	default:
-		return "??";
+		default:
+		return "Invalid Enum";
 		break;
 	}
 }
@@ -84,8 +86,8 @@ String EnumsClass::EnumStr(EnumsClass::State state){
 	case EnumsClass::VacuumClean:
 		return "VClean";
 		break;
-	default:
-		return "??";
+		default:
+		return "Invalid Enum";
 		break;
 	}
 }
@@ -108,8 +110,8 @@ String EnumsClass::EnumStr(EnumsClass::Temperature temperature) {
 	case EnumsClass::OutInRange:
 		return "Out Range";
 		break;
-	default:
-		return "??";
+		default:
+		return "Invalid Enum";
 		break;
 	}
 }
@@ -131,6 +133,15 @@ String EnumsClass::EnumStr(EnumsClass::Interupt interupt) {
 		break;
 	case EnumsClass::Void:
 		return "Void";
+		break;
+	case EnumsClass::FifoPush:
+		return "FifoPush - ";
+		break;
+	case EnumsClass::LifoPush:
+		return "LifoPush - ";
+		break;
+		default:
+		return "Invalid Enum";
 		break;
 	}
 }
