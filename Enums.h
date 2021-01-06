@@ -67,6 +67,8 @@ class EnumsClass
 		CheckSapFloat,
 		CheckSapLines,
 		Void,
+		FifoPush,
+		LifoPush,
 	 };
 
 	 static String EnumStr(Action action);
