@@ -2,7 +2,10 @@
 
 #ifndef _DEFINEDVALUES_h
 #define _DEFINEDVALUES_h
+static const int InterruptBufferSize = 20;
+#define CIRCULAR_BUFFER_INT_SAFE // Make circular buffer interrupt safe (using volitile)
 
+static const int SapLineCount = 8;
 static const int RelayCount[] = {9, 3};
 static const int ValveBypassPins[] = { 0, 24, 26};
 static const int ValvePinsAll[] = { 0,30,32,34,36,38,40,42,44 };
@@ -12,7 +15,6 @@ static volatile bool Web_Read = false;
 static volatile bool Web_Write = false;
 static volatile bool CheckSensors = false;
 static volatile bool ProcessTimedInterrupt = false;
-static volatile bool TankFloatInterruptRaised = false;
 #define LCD_ATTACHED false
 // PINS
 ////Most Arduino designs have two hardware interrupts(referred to as "interrupt0" and "interrupt1") hard - wired to digital I / O pins 2 and 3, respectively.
@@ -41,11 +43,13 @@ static volatile bool TankFloatInterruptRaised = false;
 #define INTERVAL_TEMPERATURE 3
 #define INTERVAL_LINE_ON_OFF_DELAY  2  // In seconds
 #define INTERVAL_VACUUM 1
-constexpr long Mills_Sec = 1000;
-constexpr long Mills_5Sec = 5000;
-constexpr long Mills_10Sec = 10000;
-constexpr long Mills_Min = 60000;
-constexpr long Mills_5Min = 300000;
+constexpr long Millis_Tenth_Sec = 100;
+constexpr long Millis_Half_Sec = 500;
+constexpr long Millis_Sec = 1000;
+constexpr long Millis_5Sec = 5000;
+constexpr long Millis_10Sec = 10000;
+constexpr long Millis_Min = 60000;
+constexpr long Millis_5Min = 300000;
 constexpr long Timer_Milli = 1000;
 constexpr long Timer_Tenth = 100000;
 constexpr long Timer_Sec = 1000000;
@@ -80,19 +84,21 @@ constexpr long Timer_5Min = 300000000;
 #define SAP_PUMP_OFF "Pump Off"
 #define SAP_PUMPING "Pumping"
 
+
 // Temperature Values
 #define TEMP_INSIDE 0
 #define TEMP_OUTSIDE 1
 #define TEMP_IN_ID 8
 #define TEMP_OUT_ID 9
-#define TEMP_PIN 4
+#define TEMP_WIRE_BUS 4
 #define TEMP_BUF_DEG 1.0
+#define TEMP_PRECISION 9
 
-#define INSIDE_HIGHTEMP  42.0
+#define INSIDE_HIGHTEMP  40.0
 #define INSIDE_LOWTEMP  32.1
 #define INSIDE 0
 #define OUTSIDE 1
-#define OUTSIDE_HIGHTEMP  42.0
+#define OUTSIDE_HIGHTEMP  40.0
 #define OUTSIDE_LOWTEMP  32.1
 #define INIT_TEMP  true
 #define TEST_TEMP  false

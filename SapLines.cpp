@@ -32,7 +32,7 @@ Note: we do not use arduino delay but our Statics::Delay(waittime)
 */
 
 
-bool SapLinesClass::CheckAllLines(InteruptorClass interuptor) {
+bool SapLinesClass::CheckAllLines() {
 	
 	switch (_sapLineTestCounter)
 	{

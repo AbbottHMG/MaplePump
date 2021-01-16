@@ -37,7 +37,6 @@ String EnumsClass::EnumStr(EnumsClass::Action action){
 		return "VC";
 		break;
 	default:
-		default:
 		return "Invalid Enum";
 		break;
 	}
@@ -54,7 +53,6 @@ String EnumsClass::EnumStr(EnumsClass::JsonType jsonType){
 		return "VC";
 		break;
 	default:
-		default:
 		return "Invalid Enum";
 		break;
 	}
@@ -86,7 +84,7 @@ String EnumsClass::EnumStr(EnumsClass::State state){
 	case EnumsClass::VacuumClean:
 		return "VClean";
 		break;
-		default:
+	default:
 		return "Invalid Enum";
 		break;
 	}
@@ -110,7 +108,7 @@ String EnumsClass::EnumStr(EnumsClass::Temperature temperature) {
 	case EnumsClass::OutInRange:
 		return "Out Range";
 		break;
-		default:
+	default:
 		return "Invalid Enum";
 		break;
 	}
@@ -125,22 +123,28 @@ String EnumsClass::EnumStr(EnumsClass::Interupt interupt) {
 	case EnumsClass::CheckMinSensors:
 		return "CheckMinSensors"; 
 		break;
+	case EnumsClass::CheckSecSensors:
+		return "CheckSecSensors";
+		break;
 	case EnumsClass::CheckSapFloat:
 		return "CheckSapFloat";
 		break;
 	case EnumsClass::CheckSapLines:
 		return "CheckSapLines";
 		break;
+	case EnumsClass::InitializeVacuumTest:
+		return "InitializeVacuumTest";
+		break;
+	case EnumsClass::ShutOnOffSystem:
+		return "ShutOnOffSystem";
+		break;
+	case EnumsClass::VacuumTestAllLines:
+		return "VacuumTestAllLines";
+		break;
 	case EnumsClass::Void:
 		return "Void";
 		break;
-	case EnumsClass::FifoPush:
-		return "FifoPush - ";
-		break;
-	case EnumsClass::LifoPush:
-		return "LifoPush - ";
-		break;
-		default:
+	default:
 		return "Invalid Enum";
 		break;
 	}

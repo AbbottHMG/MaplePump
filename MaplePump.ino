@@ -1,10 +1,5 @@
-#include "TemperatureChecks.h"
-#include <TimerThree.h>
-#include <TimerOne.h>
-#include <CircularBuffer.h>
-#include <OneWire.h>
-#include <ArduinoJson.hpp>
-#include <ArduinoJson.h>
+
+
 // Visual Micro is in vMicro>General>Tutorial Mode
 // 
 /*
@@ -13,12 +8,12 @@
     Author:     ABBOTT-LAP\Abbott
 */
 
+#include <OneWire.h>
 #include "Heater.h"
 #include "TankFloat.h"
 #include "DefinedValues.h"
 #include "Enums.h"
 #include "FlowMeter.h"
-#include "Interupt.h"
 #include "LCD.h"
 #include "Logger.h"
 #include "Log.h"
@@ -28,12 +23,19 @@
 #include "SapLines.h"
 #include "SDCard.h"
 #include "Statics.h"
+#include "Task.h"
+#include "TaskManager.h"
+#include "TemperatureChecks.h"
 #include "USBTester.h"
 #include "Vacuum.h"
 #include "VacuumPump.h"
 #include "ValveRelays.h"
 #include "WebServer.h"
+#include <CircularBuffer.h>
+static  CircularBuffer<TaskClass*, InterruptBufferSize> CBuffer;
+static TaskClass Tasks[InterruptBufferSize];
 SapLinesClass *sapLines = new SapLinesClass();
+
 // Using Statics::Delay en lieu of Delay does not inhibit interrupts
 static bool _setUpComplete = false;
 void setup()
@@ -59,15 +61,14 @@ void LocalSetup() {
 		LoggerClass::Init();
 		LCDClass::Init();
 		SDCardClass::Init();
-		TankFloatClass::Init();
+		TankFloatClass::Init(); // Controls SapTankPump
 		//TempCheckClass::Init();
 		VacuumPumpClass::Init();
-		SapTankPumpClass::Init();
+		//SapTankPumpClass::Init();
 		ValveRelaysClass::Init();
 		sapLines->Init();
 		SapLinesClass::TurnOnAllLines();
 		Serial.println("Call Interrupt");
-		InteruptClass::init();
 		//initializeState();
 		Serial.print("Startup End Free RAM: ");
 		Serial.println(FreeRam());
@@ -78,32 +79,22 @@ void LocalSetup() {
 		//WebServerClass::Init(InterruptsClass::Shutdown, InterruptsClass::Restart, WEB_SERVER_ETHERNET);
 	}
 }
-int NextCounter = 0;
+bool noMoreTasks;
 
 void loop()
 {
-
-	int size = InteruptClass::interuptCount();
-	String time = RTClockClass::GetTimeStamp(DATE_TIME) + " :";
-		Serial.println(time + size);
-	if (CheckSensors) {
-		//InterruptsClass::CheckSensors();
-		Serial.println(time + " CheckSensors");
-		CheckSensors = false;
+	//Just keep trying
+	Serial.print("Trying - ");
+	Serial.println(millis());
+	noMoreTasks = TaskManagerClass::runNextTask();
+	delay(5000);
+	if (noMoreTasks) {
+		Serial.print("No more Tasks");
 	}
-	size = InteruptClass::interuptCount();
-	Serial.println(size + "FifoSize");
-	if(size > 0){
-		//InteruptClass::;
+	else {
+		TaskManagerClass::listBuffer();
 	}
-	else{
-		Serial.println(time + "Fifo Empty");
-		//// runs for 1 web page cycle
-		//WebServerClass::CheckWebRequest();
-		//// when completed, we just continue
-	}
-
-	StaticsClass::Delay(10000);
+	
 }
 void LCD_DisplayTime() {
 

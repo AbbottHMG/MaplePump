@@ -64,11 +64,13 @@ class EnumsClass
 	 enum Interupt{
 		CheckInTemp,
 		CheckMinSensors, // vacuum, outTemp
+		CheckSecSensors, // float, in temp
 		CheckSapFloat,
 		CheckSapLines,
+		InitializeVacuumTest,
+		ShutOnOffSystem,
+		VacuumTestAllLines,
 		Void,
-		FifoPush,
-		LifoPush,
 	 };
 
 	 static String EnumStr(Action action);
