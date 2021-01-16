@@ -8,7 +8,6 @@
     Author:     ABBOTT-LAP\Abbott
 */
 
-#include <OneWire.h>
 #include "Heater.h"
 #include "TankFloat.h"
 #include "DefinedValues.h"

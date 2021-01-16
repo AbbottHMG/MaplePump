@@ -33,3 +33,12 @@
 *.ipch
 *.db
 *.xml
+
+# visual studio folders
+*.hex
+*.elf
+*.suo
+*.buildInfo
+**/.vs
+__vm
+debug

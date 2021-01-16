@@ -10,11 +10,12 @@
 #endif
 
 #include <DallasTemperature.h>
+#include <OneWire.h>
 #include "DefinedValues.h"
 #include "Enums.h"
 
-OneWire ds18x20[] = { TEMP_IN_ID, TEMP_OUT_ID };
-const int oneWireCount = sizeof(ds18x20)/sizeof(OneWire);
+static OneWire oneWires[] = { TEMP_IN_ID, TEMP_OUT_ID };
+static const int oneWireCount = sizeof(oneWires)/sizeof(OneWire);
 
 class TemperatureChecksClass
 {
@@ -25,7 +26,7 @@ static float _last_temps[2];
  public:
 static	void init();
 static float GetTemp(int inOut);
-static  IsOn(int inOut);
+static bool IsInRange(int inOut);
 };
 
 extern TemperatureChecksClass TemperatureChecks;
