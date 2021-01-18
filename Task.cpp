@@ -24,7 +24,7 @@ void TaskClass::fInit(fPointer pointer,
 	TaskClass::_period = period;
 	TaskClass::_notInUse = false;
 	TaskClass::_lastInvoke = millis();
-	TaskClass::_useCount = 1;
+	TaskClass::_useCount = useCount;
 }
 
 EnumsClass::Interrupt TaskClass::functionName() {
