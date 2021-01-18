@@ -8,14 +8,14 @@ TaskClass::TaskClass() { TaskClass::resetMe(); }
 
 void TaskClass::resetMe() {
 	TaskClass::_fPointer = NULL;
-	TaskClass::_functionName = EnumsClass::Void;
+	TaskClass::_functionName = EnumsClass::Unkown;
 	TaskClass::_period = 9999;
 	TaskClass::_notInUse = true;
 	TaskClass::_useCount = 0;
 	TaskClass::_lastInvoke = millis();
 }
 void TaskClass::fInit(fPointer pointer,
-				EnumsClass::Interupt functionName,
+				EnumsClass::Interrupt functionName,
 				unsigned long period,
 				int useCount)
 {
@@ -27,7 +27,7 @@ void TaskClass::fInit(fPointer pointer,
 	TaskClass::_useCount = 1;
 }
 
-EnumsClass::Interupt TaskClass::functionName() {
+EnumsClass::Interrupt TaskClass::functionName() {
 	return TaskClass::_functionName;
 }
 bool TaskClass::completed() {

@@ -13,55 +13,21 @@ class EnumsClass
 {
  public:
 	  
-	 enum SapLineState {
-		 DONE,
-		 CLOSE_ALL,	// On throughout close, until all are closed
-		 OPENNING,	// Open line to test
-		 CLOSING,	// Close leaking line
-		 NEXT_LINE,	// Go to next line at next iterration
-	 };
-
-	 enum JsonType {
-		 LOG_DATA,
-		 TEMPERATUE_DATA,
-		 VACUUM_DATA,
-	 };
-	 enum State {
-		 Cold,
-		 NoFlow,
-		 Running,
-		 Starting,
-		 Stopped,
-		 Stopping,
-		 VacuumClean,
-	 };
 	 enum Action {
-		FlowCheck,
-		HeatInRange,
-		HeatOff,
-		HeatOn, 
+		CheckFlow,
 		Initializing,
 		LineCheck,
 		NoAction,
+		OutColdStop,
+		OutWarmStart,
 		ShutDown,
 		StartUp,
-		ToCold,
-		ToWarm,
+		TurnHeatOff,
+		TurnHeatOn, 
 		VaccumCheck,
 	 };
 
-	 enum Temperature {
-		 InCold,
-		 InHot,
-		 InInRange,
-		 OutCold,
-		 OutHot,
-		 OutInRange,
-		 TurnOn,
-		 TurnOff,
-	 };
-
-	 enum Interupt{
+	 enum Interrupt{
 		CheckInTemp,
 		CheckMinSensors, // vacuum, outTemp
 		CheckSecSensors, // float, in temp
@@ -70,14 +36,45 @@ class EnumsClass
 		InitializeVacuumTest,
 		ShutOnOffSystem,
 		VacuumTestAllLines,
-		Void,
+		Unkown,
+	 };
+
+	 enum JsonType {
+		 LOG_DATA,
+		 TEMPERATUE_DATA,
+		 VACUUM_DATA,
+	 };
+	 enum SapLineState {
+		 DONE,
+		 CLOSE_ALL_FOR_TEST,	// On throughout close, until all are closed
+		 OPEN_A_LINE,	// Open line to test
+		 CLOSE_A_LINE,	// Close leaking line
+		 NEXT_LINE,	// Go to next line at next iterration
+	 };
+
+	 enum State {
+		 NoFlow,
+		 OutIsCold,
+		 OutIsWarm,
+		 Running,
+		 Starting,
+		 Stopped,
+		 Stopping,
+		 VacuumClean,
+	 };
+
+	 enum Temperature {
+		 InCold,
+		 InInRange,
+		 OutCold,
+		 OutInRange,
 	 };
 
 	 static String EnumStr(Action action);
 	 static String EnumStr(JsonType jsonType);
 	 static String EnumStr(State state);
 	 static String EnumStr(Temperature temperature);
-	 static String EnumStr(Interupt interrupt);
+	 static String EnumStr(Interrupt interrupt);
 };
 
 extern EnumsClass Enums;

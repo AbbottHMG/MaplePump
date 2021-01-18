@@ -8,20 +8,20 @@
     Author:     ABBOTT-LAP\Abbott
 */
 
-#include "Heater.h"
-#include "TankFloat.h"
 #include "DefinedValues.h"
 #include "Enums.h"
 #include "FlowMeter.h"
+#include "Heater.h"
 #include "LCD.h"
 #include "Logger.h"
 #include "Log.h"
 #include "RTClock.h"
-#include "SapTankPump.h"
-#include "SapLine.h"
-#include "SapLines.h"
 #include "SDCard.h"
 #include "Statics.h"
+#include "SapLine.h"
+#include "SapLines.h"
+#include "SapTankFloat.h"
+#include "SapTankPump.h"
 #include "Task.h"
 #include "TaskManager.h"
 #include "TemperatureChecks.h"
@@ -60,15 +60,15 @@ void LocalSetup() {
 		LoggerClass::Init();
 		LCDClass::Init();
 		SDCardClass::Init();
-		TankFloatClass::Init(); // Controls SapTankPump
+		SapTankFloatClass::Init(); // Controls SapTankPump
 		//TempCheckClass::Init();
 		VacuumPumpClass::Init();
 		//SapTankPumpClass::Init();
 		ValveRelaysClass::Init();
 		sapLines->Init();
 		SapLinesClass::TurnOnAllLines();
-		Serial.println("Call Interrupt");
-		//initializeState();
+		Serial.println("Setup Interrupts");
+		TaskManagerClass::init();
 		Serial.print("Startup End Free RAM: ");
 		Serial.println(FreeRam());
 

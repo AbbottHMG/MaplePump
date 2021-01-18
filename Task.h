@@ -18,7 +18,7 @@ class TaskClass
  public:
 	TaskClass();
 	void fInit(fPointer pointer,
-				EnumsClass::Interupt functionName,
+				EnumsClass::Interrupt functionName,
 				unsigned long period,
 				int useCount = 1);
 	void printMe(String about = "");
@@ -29,10 +29,10 @@ class TaskClass
 	int useCount();
 	bool runTask(TaskClass* task);
 	void setUseCount(int useCount);
-	EnumsClass::Interupt functionName();
+	EnumsClass::Interrupt functionName();
 protected:
 
-	EnumsClass::Interupt _functionName;
+	EnumsClass::Interrupt _functionName;
 	unsigned long _period; // wait time since last envoke
 	unsigned long _lastInvoke;
 	bool _notInUse;

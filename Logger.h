@@ -23,8 +23,7 @@ public:
 	static void LoggerClass::Init();
 	static String LogEntry();
 private:
-	static String ShowLines();
-	static String DisplayLines();
+	static String DisplayLCDLines();
 };
 
 extern LoggerClass Logger;

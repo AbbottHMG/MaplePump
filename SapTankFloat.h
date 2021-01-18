@@ -9,10 +9,11 @@
 	#include "WProgram.h"
 #endif
 
+#include<TimerOne.h>
 #include "SapTankPump.h"
 #include "DefinedValues.h"
 #include "SapTankPump.h"
-class TankFloatClass
+class SapTankFloatClass
 {
  protected:
 	static void FloatStateChanged();
@@ -25,7 +26,7 @@ class TankFloatClass
 	static bool IsFloatLow();
 };
 
-extern TankFloatClass TamkFloat;
+extern SapTankFloatClass TamkFloat;
 
 #endif
 

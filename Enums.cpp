@@ -3,14 +3,8 @@
 
 String EnumsClass::EnumStr(EnumsClass::Action action){
 	switch(action){
-	case EnumsClass::FlowCheck:
+	case EnumsClass::CheckFlow:
 		return "Flw";
-		break;
-	case EnumsClass::HeatOff:
-		return "HOf";
-		break;
-	case EnumsClass::HeatOn:
-		return "HOn";
 		break;
 	case EnumsClass::Initializing:
 		return "Init";
@@ -19,7 +13,13 @@ String EnumsClass::EnumStr(EnumsClass::Action action){
 		return "LI";
 		break;
 	case EnumsClass::NoAction:
-		return "NO";
+		return "N/A";
+		break;
+	case EnumsClass::OutColdStop:
+		return "OCS";
+		break;
+	case EnumsClass::OutWarmStart:
+		return "OWS";
 		break;
 	case EnumsClass::ShutDown:
 		return "SH";
@@ -27,17 +27,17 @@ String EnumsClass::EnumStr(EnumsClass::Action action){
 	case EnumsClass::StartUp:
 		return "ST";
 		break;
-	case EnumsClass::ToCold:
-		return "TC";
+	case EnumsClass::TurnHeatOff:
+		return "TH+";
 		break;
-	case EnumsClass::ToWarm:
-		return "TW";
+	case EnumsClass::TurnHeatOn:
+		return "TH-";
 		break;
 	case EnumsClass::VaccumCheck:
 		return "VC";
 		break;
 	default:
-		return "Invalid Enum";
+		return "Invalid Action";
 		break;
 	}
 }
@@ -53,39 +53,39 @@ String EnumsClass::EnumStr(EnumsClass::JsonType jsonType){
 		return "VC";
 		break;
 	default:
-		return "Invalid Enum";
+		return "Invalid Json Type";
 		break;
 	}
 }
 String EnumsClass::EnumStr(EnumsClass::State state){
 	switch (state)
 	{
-	case EnumsClass::Cold: 
-		return "Cld";
-		break;
 	case EnumsClass::NoFlow:
-		return "NoF";
+		return "NF";
+		break;
+	case EnumsClass::OutIsCold:
+		return "OC";
+		break;
+	case EnumsClass::OutIsWarm:
+		return "OW";
 		break;
 	case EnumsClass::Running:
-		return "Rn";
+		return "RN";
 		break;
 	case EnumsClass::Starting:
-		return "Strt";
-		break;
-	case EnumsClass::StartUp:
-		return "Strt";
+		return "STRG";
 		break;
 	case EnumsClass::Stopped:
-		return "Stpd";
+		return "STPD";
 		break;
 	case EnumsClass::Stopping:
-		return "Stpng";
+		return "STPG";
 		break;
 	case EnumsClass::VacuumClean:
-		return "VClean";
+		return "VC";
 		break;
 	default:
-		return "Invalid Enum";
+		return "Invalid State";
 		break;
 	}
 }
@@ -94,28 +94,25 @@ String EnumsClass::EnumStr(EnumsClass::Temperature temperature) {
 	switch (temperature)
 	{
 	case EnumsClass::InCold:
-		return "In cold";
-		break;
-	case EnumsClass::InHot:
-		return "In Hot";
+		return "ITC";
 		break;
 	case EnumsClass::InInRange:
-		return "In Range";
+		return "ITR";
 		break;
 	case EnumsClass::OutCold:
-		return "Out Cold";
+		return "OTC";
 		break;
 	case EnumsClass::OutInRange:
-		return "Out Range";
+		return "OTR";
 		break;
 	default:
-		return "Invalid Enum";
+		return "Invalid Temp";
 		break;
 	}
 }
 
-String EnumsClass::EnumStr(EnumsClass::Interupt interupt) {
-	switch (interupt)
+String EnumsClass::EnumStr(EnumsClass::Interrupt interrupt) {
+	switch (interrupt)
 	{
 	case EnumsClass::CheckInTemp:
 		return "CheckInTemp";
@@ -141,11 +138,11 @@ String EnumsClass::EnumStr(EnumsClass::Interupt interupt) {
 	case EnumsClass::VacuumTestAllLines:
 		return "VacuumTestAllLines";
 		break;
-	case EnumsClass::Void:
-		return "Void";
+	case EnumsClass::Unkown:
+		return "Unkown";
 		break;
 	default:
-		return "Invalid Enum";
+		return "Invalid Interrupt";
 		break;
 	}
 }

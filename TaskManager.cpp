@@ -115,7 +115,7 @@ bool TaskManagerClass::boolIsTrue() {
 
 // Used to emulate singleton
 // stops creation of duplicate task types
-bool TaskManagerClass::NoTaskPresent(EnumsClass::Interupt functionName) {
+bool TaskManagerClass::NoTaskPresent(EnumsClass::Interrupt functionName) {
 	bool noTaskPresent = true;
 	for (int i = 0; i < CBuffer.size(); i++) {
 		if (CBuffer[i]->functionName() == functionName){

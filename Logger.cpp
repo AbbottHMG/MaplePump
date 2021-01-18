@@ -3,33 +3,38 @@
 // 
 
 #include "Logger.h"
-static String lineString;
+static String lineString1;
+static String lineString2;
 void LoggerClass::Init() {
-	lineString.reserve(25);
+	lineString1.reserve(25);
+	lineString2.reserve(25);
 }
+
 String LoggerClass::LogEntry() {
 	int ram = FreeRam();
 	String sRam = String(ram);
 	LogClass::FreeRam(sRam);
-	DisplayLines();
+	LoggerClass::DisplayLCDLines();
 	String logJson = JsonClass::BuildJsonDoc();
 	//Serial.println(logJson);
 	SDCardClass::WriteLogFile(logJson); 
 	return logJson;
 }
  
-String LoggerClass::DisplayLines() {
-		lineString= LogClass::State() + "|";
-		lineString+= LogClass::OutTempF() + "|";
-		lineString+= LogClass::InTempF();
-		LCDClass::PrintLn(lineString, 0);
-		Serial.println(lineString);
-		lineString = LogClass::ActiveLines() + "|";
-		lineString+= LogClass::BrokenLines() + "|";
-		lineString+= LogClass::VacuumPsi();
-		LCDClass::PrintLn(lineString, 1);
-		Serial.println(lineString);
-	return lineString;
+
+// When ever we log we also update LCD display
+String LoggerClass::DisplayLCDLines() {
+		lineString1= LogClass::State() + "|";
+		lineString1+= LogClass::OutTempF() + "|";
+		lineString1+= LogClass::InTempF();
+		LCDClass::PrintLn(lineString1, 0);
+		Serial.println(lineString1);
+		lineString2 = LogClass::ActiveLines() + "|";
+		lineString2+= LogClass::BrokenLines() + "|";
+		lineString2+= LogClass::VacuumPsi();
+		LCDClass::PrintLn(lineString2, 1);
+		Serial.println(lineString2);
+	return lineString1 +"..." + lineString2;
 }
 
 

@@ -42,8 +42,8 @@ void LogClass::Init() {
 	_action="vacCheck";
 	_activeLines="1234";
 	_brokenLines="5678";
-	_dateTime="2020-01-24-101230";
-	_fileName="20200122";
+	_dateTime="2021-01-20-120000";
+	_fileName="20210120";
 	_flowLast="2.0";
 	_flowRate="3.0";
 	_flowTot="56.0";

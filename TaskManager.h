@@ -29,7 +29,7 @@ class TaskManagerClass
 	 static fPointer _fPointer;
 	 // For tests
 	 static bool boolIsTrue();
-	 static bool NoTaskPresent(EnumsClass::Interupt functionType);
+	 static bool NoTaskPresent(EnumsClass::Interrupt functionName);
  public:
 	 static void init();
 	 static TaskClass* getAvailableTask();;
