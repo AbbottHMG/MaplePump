@@ -17,7 +17,7 @@ void TaskClass::resetMe() {
 void TaskClass::fInit(fPointer pointer,
 				EnumsClass::Interrupt functionName,
 				unsigned long period,
-				int useCount)
+				int useCount = 1)
 {
 	TaskClass::_fPointer = pointer;
 	TaskClass::_functionName = functionName;
@@ -55,6 +55,15 @@ void TaskClass::printMe(String about) {
 	if (about != "") {
 		Serial.print(about);
 		Serial.print(":");
+
+		String strOut = about
+			+ "-"
+			+ TaskClass::_period
+			+ "-"
+			+ TaskClass::_useCount
+			+ "-"
+			+ _lastInvoke;
+		LCDClass::PrintLn(about, 1);
 	}
 	Serial.print(EnumsClass::EnumStr(TaskClass::_functionName)); 
 	Serial.print("-");

@@ -214,7 +214,7 @@ void TaskManagerClass::VacuumLostInitialize(TaskClass* callTask) {
 		TaskClass* task = TaskManagerClass::getAvailableTask();
 		pointer = CheckSapLines;
 		task->fInit(pointer, EnumsClass::CheckSapLines, Millis_10Sec, SapLineCount);
-		task->printMe("Sap Line count - 8 - ");
+		task->printMe("Sap Line count 8: ");
 		TaskManagerClass::fifoPush(task);
 	}
 }

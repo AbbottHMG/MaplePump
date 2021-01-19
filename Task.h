@@ -10,6 +10,8 @@
 #endif
 
 #include "Enums.h"
+#include "LCD.h"
+
 
 class TaskClass
 {
