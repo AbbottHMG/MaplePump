@@ -57,7 +57,7 @@ bool StaticsClass::CopyChars(String from, String to, int length = 0) {
 // This is used for lopp function delays
 // Permits interrupts to operate properly
 // Supporting WebBrowser reads/writes using interrupts
-void StaticsClass::Delay(long waitTime){
+void StaticsClass::Delay(unsigned long waitTime){
 	long startTime = millis();
 	while ((startTime + waitTime) < millis()){}
 }

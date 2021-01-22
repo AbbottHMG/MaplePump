@@ -30,6 +30,7 @@ class TaskClass
 	bool canRunTask();
 	int useCount();
 	bool runTask(TaskClass* task);
+	void setPeriod(unsigned long period);
 	void setUseCount(int useCount);
 	EnumsClass::Interrupt functionName();
 protected:

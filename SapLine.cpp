@@ -42,6 +42,7 @@ unsigned long SapLineClass::TimeLineFailed() {
 void SapLineClass::ShutMeOff() {
 	ValveRelaysClass::CloseValve(LINE_VALVES, _lineNumber);
 	_isOn = false;
+	StaticsClass::Delay(Millis_5Sec);
 }
 
 void SapLineClass::TurnMeOn() {

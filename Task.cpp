@@ -77,7 +77,9 @@ void TaskClass::printMe(String about) {
 bool TaskClass::notInUse() {
 	return TaskClass::_notInUse;
 }
-
+void TaskClass::setPeriod(unsigned long period) {
+	_period = period;
+}
 int TaskClass::useCount() {
 	return _useCount;
 }

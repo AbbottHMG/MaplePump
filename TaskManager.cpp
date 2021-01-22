@@ -207,22 +207,31 @@ void TaskManagerClass::MinuteSensorTest(TaskClass* callTask) {
 	 }
 }
 void TaskManagerClass::VacuumLostInitialize(TaskClass* callTask) {
-	// Close all lines & wait 10 seconds
-
-	callTask->printMe("Vacuum Lost Shut Lines");
+	bool vacuumLost = true;
 	if (TaskManagerClass::NoTaskPresent(EnumsClass::CheckSapLines)) {
-		TaskClass* task = TaskManagerClass::getAvailableTask();
-		pointer = CheckSapLines;
-		task->fInit(pointer, EnumsClass::CheckSapLines, Millis_10Sec, SapLineCount);
-		task->printMe("Sap Line count 8: ");
-		TaskManagerClass::fifoPush(task);
+		// for testing
+#if DEBUG
+		vacuumLost = boolIsTrue();
+#else
+		vacuumLost = VacuumClass::IsVacuumLost();
+#endif
+		if (vacuumLost) {
+			// Close all lines & wait 10 seconds
+			SapLinesClass::TurnOffAllLines();
+			callTask->printMe("No Vac Shut Lines");
+			TaskClass* task = TaskManagerClass::getAvailableTask();
+			pointer = CheckSapLines;
+			task->fInit(pointer, EnumsClass::CheckSapLines, Millis_10Sec, SapLineCount);
+			task->printMe("Sap Line count 8: ");
+			TaskManagerClass::fifoPush(task);
+		}
 	}
 }
 
 void TaskManagerClass::ShutOnOffSystem(TaskClass* callTask) {
-	Serial.print("Sut the thing on/off - ");
-	callTask->printMe();
+	callTask->printMe("Turh On/Off System");
 }
+
 void TaskManagerClass::CheckSapLines(TaskClass* task) {	
 	// In this case we update task count and leave it in buffer
 	// Test Sapline(usecount - rel to 0)

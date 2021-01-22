@@ -11,8 +11,6 @@ static int* pins;
 static int _lineCount;
 static volatile int _activeLine;
 static volatile enum EnumsClass::SapLineState _currentTestState;
-static volatile int _sapLineTestCounter = 0;
-static volatile bool _sapLineTestComplete = false;
 
 /*
 Line Checks:
@@ -31,28 +29,24 @@ Note: we do not use arduino delay but our Statics::Delay(waittime)
  The whole process should take less than a minute.
 */
 
-
-bool SapLinesClass::CheckAllLines() {
-	
-	switch (_sapLineTestCounter)
-	{
-	case 0:
-		SapLinesClass::TurnOffAllLines();
-		break;
-	default:
-		_myLines[_sapLineTestCounter]->TurnMeOn();
-		if (!VacuumClass::IsVacuumLost) {
-			_myLines[_sapLineTestCounter]->ShutMeOff();
-		}
-		_sapLineTestCounter++;
-		if (_sapLineTestCounter > _lineCount) {
-			_sapLineTestComplete = true; 
-			_sapLineTestCounter = 0;
-			SetLogLineStates();
-		}
-		break;
-	}		
-	return _sapLineTestComplete;
+// when a line is checked, if its ok, we chage the period to  .5sec
+bool SapLinesClass::CheckALine(TaskClass* task) {
+	_myLines[task->useCount()]->TurnMeOn();
+	// Wait for line valve relay delay
+	StaticsClass::Delay(Millis_5Sec);
+	// for testing
+#if DEBUG
+	if (task->useCount() % 2 == 0) {
+		_myLines[task->useCount()]->ShutMeOff();
+	}
+#else
+	if (!VacuumClass::IsVacuumLost()) {
+		_myLines[task->useCount()]->ShutMeOff();
+	}
+#endif
+	if (task->useCount() == 0) {
+		SetLogLineStates();
+	}
 }
 void SapLinesClass::Init() {
 	pins = ValveRelaysClass::GetPins(LINE_VALVES);

@@ -19,7 +19,7 @@ public:
 	static bool CopyChars(String from, String to, int length);
 	static String IntArrayToString(int* array);
 	static char* StringToCharArray(String string);
-	static void Delay(long waitTime);
+	static void Delay(unsigned long waitTime);
 };
 
 

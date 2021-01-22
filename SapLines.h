@@ -12,9 +12,11 @@
 #include "Enums.h"
 #include "DefinedValues.h"
 #include "Log.h"
+#include "Task.h"
 #include "Vacuum.h"
 #include "ValveRelays.h"
-#include"SapLine.h"
+#include "SapLine.h"
+#include "Statics.h"
 class SapLinesClass
 {
 protected:
@@ -23,7 +25,7 @@ protected:
 	static String GetActiveLines();
 public:
 	static void Init();
-	static bool CheckAllLines();
+	static bool CheckALine(TaskClass* task);
 	static void TurnOffAllLines();
 	static void TurnOnAllLines();
 	static int GetActiveLineCount();
