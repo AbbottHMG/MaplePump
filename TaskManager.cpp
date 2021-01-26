@@ -256,7 +256,6 @@ void TaskManagerClass::CheckSapLines(TaskClass* task) {
 
 
 //bool TaskManagerClass::testFunction(TaskClass* task) {
-//	// TODO: useCount could be done here ?
 //	task->printMe("testFunct");
 //}
 //

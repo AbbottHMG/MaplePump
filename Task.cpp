@@ -41,8 +41,7 @@ bool TaskClass::canRunTask() {
 }
 
 bool TaskClass::runTask(TaskClass* task) {
-	_useCount--;  // TODO: should useCount mgmt be auto or logically controlled in task function ?
-
+	_useCount--; 
 	_fPointer(task);
 }
 

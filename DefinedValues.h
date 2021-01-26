@@ -19,6 +19,9 @@ static volatile bool ProcessTimedInterrupt = false;
 // PINS
 ////Most Arduino designs have two hardware interrupts(referred to as "interrupt0" and "interrupt1") hard - wired to digital I / O pins 2 and 3, respectively.
 ////The Arduino Mega has six hardware interrupts including the additional interrupts("interrupt2" through "interrupt5") on pins 21, 20, 19, and 18.
+
+// TODO MP: How so share Pin4 sd/temps/usb-analog
+
 #define	PINS_HEATER 49
 #define	PINS_FLOAT_SWITCH 11 
 #define PINS_FLOW_STATUS_LED 7  //???????????
@@ -26,6 +29,7 @@ static volatile bool ProcessTimedInterrupt = false;
 #define PINS_SAP_TANK_PUMP 5  // ?????
 #define PINS_SD_CARD 4
 #define PINS_SD_CARD_SLAVE 10
+#define PINS_TEMP_ONE_WIRE_BUS 4
 #define PINS_USB_ANALOG 4 
 #define PINS_VACUUM_ANALOG 3
 #define PINS_VACUUM_PUMP 48  // ?????
@@ -90,7 +94,6 @@ constexpr long Timer_5Min = 300000000;
 #define TEMP_OUTSIDE 1
 #define TEMP_IN_ID 8
 #define TEMP_OUT_ID 9
-#define TEMP_WIRE_BUS 4
 #define TEMP_BUF_DEG 1.0
 #define TEMP_PRECISION 9
 
